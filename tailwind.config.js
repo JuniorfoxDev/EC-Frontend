@@ -5,7 +5,17 @@ module.exports = {
   ],
   theme: {
     extend: {
-      
+      rotate:{
+        '17': '17deg',
+      },
+      animation: {
+          'bounce-slow': 'bounce 3s infinite'
+      },
+      keyframes: {
+          bounce: {
+              '0%, 100%': { transform: 'translateY(5%)' },
+          }
+      }
     },
   },
   plugins: [],
