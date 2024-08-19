@@ -64,7 +64,7 @@ const Product = () => {
                                 Also Including all duties
                             </div>
                             <div className="mb-10">
-                                <div className="flex items-center justify-between my-4">
+                                <div className="flex items-center justify-between my-6">
                                     <div className="text-base font-semibold">Select Size</div>
                                     <div className="text-base font-medium text-black/[0.5] cursor-pointer">
                                         Size Guide
@@ -86,7 +86,10 @@ const Product = () => {
                                 Add To Cart
                             </button>
                             <button className="w-full py-3 rounded-full text-white mt-4 bg-black text-lg font-medium transition-transform active:scale-95 mb-3 hover:opacity-75">
-                                Favourite <IoMdHeartEmpty size={15} />
+                                <div className="flex flex-row">
+                                     <p>Favourite</p>    
+                                     <IoMdHeartEmpty size={20} />
+                                </div>
                             </button>
                             <div>
                                 <div className="text-lg font-bold mb-5">Product Details</div>
