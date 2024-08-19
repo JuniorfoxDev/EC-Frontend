@@ -64,7 +64,7 @@ const Product = () => {
                                 Also Including all duties
                             </div>
                             <div className="mb-10">
-                                <div className="flex items-center justify-between mb-2">
+                                <div className="flex items-center justify-between my-4-4">
                                     <div className="text-base font-semibold">Select Size</div>
                                     <div className="text-base font-medium text-black/[0.5] cursor-pointer">
                                         Size Guide
