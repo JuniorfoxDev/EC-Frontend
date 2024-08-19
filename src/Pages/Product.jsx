@@ -70,15 +70,15 @@ const Product = () => {
                                     </div>
                                 </div>
                                 <div className="grid grid-cols-3 gap-3">
-                                    {product.sizes && product.sizes.map((size, i) => (
-                                        <div
+                                {product.sizes && product.sizes.map((size, i) => (
+                                     <div
                                             key={i}
-                                            className={`border rounded-md text-center py-3 font-medium ${item.enabled ? "hover:border-black cursor-pointer" : "cursor-not-allowed bg-black/[0.1] opacity-50"} ${selectedSize === item.size ? "border-black" : ""}`}
+                                            className={`border rounded-md text-center py-3 font-medium ${selectedSize === size ? "border-black" : ""} ${true ? "hover:border-black cursor-pointer" : "cursor-not-allowed bg-black/[0.1] opacity-50"}`}
                                             onClick={() => setSelectedSize(size)}
-                                        >
-                                            {size}
-                                        </div>
-                                    ))}
+                                     >
+                                         {size}
+                                     </div>
+                                ))}
                                 </div>
                             </div>
                             <button className="w-full py-3 rounded-full text-white mt-4 bg-black text-lg font-medium transition-transform active:scale-95 mb-3 hover:opacity-75">
