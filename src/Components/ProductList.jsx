@@ -29,7 +29,10 @@ const ProductList = () => {
   return (
     <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5  px-5 md:px-0'>
       {loading ? (
-          <p>Loading...</p>
+        <div className='flex justify-center items-center'>
+          <img src="https://nike-shoe-store.vercel.app/logo.svg" alt="" className='w-[60px] md:w-[80px]'/>
+          <p className='text-black/[0.9]'>Loading...</p>
+        </div>
         ) : (
             products.map((product) => (
                 <ProductCard key={product._id} {...product} />
