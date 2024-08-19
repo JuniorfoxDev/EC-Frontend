@@ -74,9 +74,9 @@ const Product = () => {
                                         <div
                                             key={i}
                                             className={`border rounded-md text-center py-3 font-medium ${item.enabled ? "hover:border-black cursor-pointer" : "cursor-not-allowed bg-black/[0.1] opacity-50"} ${selectedSize === item.size ? "border-black" : ""}`}
-                                            onClick={() => setSelectedSize(item.size)}
+                                            onClick={() => setSelectedSize(item.sizes)}
                                         >
-                                            {item.size}
+                                            {item.sizes}
                                         </div>
                                     ))}
                                 </div>
