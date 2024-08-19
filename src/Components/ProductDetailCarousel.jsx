@@ -1,6 +1,4 @@
-import { Carousel } from "react-responsive-carousel";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
-const ProductDetailCarousel = (images) => {
+const ProductDetailCarousel = () => {
     return (
         <div className="text-white text-[20px] w-full max-w-[550px] mx-auto sticky top-[50px]">
             <Carousel
@@ -9,7 +7,7 @@ const ProductDetailCarousel = (images) => {
                 showStatus={false}
                 className="productCarousel"
             >
-                {images.map((img, index) => (
+                {product.images && product.images.map((img, index) => (
                     <img key={index} src={img.url} alt={product.name} />
                 ))}
             </Carousel>
