@@ -7,9 +7,13 @@ const ProductDetailCarousel = () => {
                 showStatus={false}
                 className="productCarousel"
             >
-                {product.images && product.images.map((img, index) => (
-                    <img key={index} src={img.url} alt={product.name} />
-                ))}
+            {product.images && Array.isArray(product.images) && product.images.length > 0 && 
+                product.images.map((img, index) => (
+                    img && img.url && (
+                        <img key={index} src={img.url} alt={product.name} />
+                    )
+                ))
+            }
             </Carousel>
         </div>
     )
