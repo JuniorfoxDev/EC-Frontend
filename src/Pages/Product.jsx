@@ -1,8 +1,8 @@
-import { Carousel } from "react-responsive-carousel";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
+
 import { IoMdHeartEmpty } from "react-icons/io";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import ProductDetailCarousel from "../Components/ProductDetailCarousel";
 
 const Product = () => {
     const [selectedSize, setSelectedSize] = useState();
@@ -36,18 +36,7 @@ const Product = () => {
                 {product ? (
                     <div className="flex flex-col lg:flex-row md:px-10 gap-[50px] lg:gap-[100px]">
                         <div className="w-full md:w-auto flex-[1.5] max-w-[500px] lg:max-w-full mx-auto lg:mx-0">
-                            <div className="text-white text-[20px] w-full max-w-[550px] mx-auto sticky top-[50px]">
-                                <Carousel
-                                    infiniteLoop={true}
-                                    showIndicators={false}
-                                    showStatus={false}
-                                    className="productCarousel"
-                                >
-                                    {product.images && product.images.map((img, index) => (
-                                        <img key={index} src={img.url} alt={product.name} />
-                                    ))}
-                                </Carousel>
-                            </div>
+                            <ProductDetailCarousel images={images.url}/>
                         </div>
                         <div className="flex-[1] py-3">
                             <div className="mb-2 text-[34px] leading-tight font-semibold">
