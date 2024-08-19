@@ -85,7 +85,7 @@ const Product = () => {
                                 Add To Cart
                             </button>
                             <button className="w-full py-3 rounded-full text-white mt-4 bg-black text-lg font-medium transition-transform active:scale-95 mb-3 hover:opacity-75">
-                                Favourite <IoMdHeartEmpty size={20} />
+                                Favourite <IoMdHeartEmpty size={15} />
                             </button>
                             <div>
                                 <div className="text-lg font-bold mb-5">Product Details</div>
