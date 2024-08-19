@@ -86,7 +86,7 @@ const Product = () => {
                                 Add To Cart
                             </button>
                             <button className="w-full py-3 rounded-full text-white mt-4 text-center bg-black text-lg font-medium transition-transform active:scale-95 mb-3 hover:opacity-75">
-                                <div className="flex flex-row items-center">
+                                <div className="flex flex-row items-center justify-center">
                                      <p>Favourite</p>    
                                      <IoMdHeartEmpty size={20} />
                                 </div>
