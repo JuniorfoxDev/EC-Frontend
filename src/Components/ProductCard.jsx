@@ -1,8 +1,13 @@
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 
 const ProductCard = ({ _id,images, name, price}) => {
+    const navigate = useNavigate();
+    const handleClick = (e) => {
+        e.prventDefault()
+        navigate('/product/:id')
+    }
     return (
-        <Link to={`/product/${_id}`}  className="transform overflow-hidden bg-white duration-300 hover:scale-95 cursor-pointer">
+        <Link to="#" onClick={handleClick}  className="transform overflow-hidden bg-white duration-300 hover:scale-95 cursor-pointer">
              <img src={images[0].url} width={500} height={400} alt="" className="rounded-lg" />
              <div className="p-2 text-black/[0.9]">
              <h2 className="text-lg font-semibold">{name}</h2>
