@@ -60,11 +60,11 @@ const Product = () => {
                             <div className="font-semibold text-black/[0.5] text-base">
                                 incl. all taxes.
                             </div>
-                            <div className="text-base font-semibold text-black/[0.5]">
+                            <div className="text-base font-semibold text-black/[0.5] pb-8">
                                 Also Including all duties
                             </div>
                             <div className="mb-10">
-                                <div className="flex items-center justify-between my-4-4">
+                                <div className="flex items-center justify-between my-4">
                                     <div className="text-base font-semibold">Select Size</div>
                                     <div className="text-base font-medium text-black/[0.5] cursor-pointer">
                                         Size Guide
