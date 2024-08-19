@@ -1,5 +1,5 @@
-import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from "react-responsive-carousel";
 import { IoMdHeartEmpty } from "react-icons/io";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
@@ -41,6 +41,7 @@ const Product = () => {
                                     infiniteLoop={true}
                                     showIndicators={false}
                                     showStatus={false}
+                                    thumbWidth={60}
                                     className="productCarousel"
                                 >
                                     {product.images && product.images.map((img, index) => (
