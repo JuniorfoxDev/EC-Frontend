@@ -4,7 +4,7 @@ import Home from './Pages/Home'
 import Product from './Pages/Product'
 import Contact from './Pages/Contact'
 import About from './Pages/About'
-export default function App() {
+export default function App({_id}) {
   return (
    <>
     <BrowserRouter>
@@ -13,7 +13,7 @@ export default function App() {
         <Route path='/' exact element={<Home/>}/>
         <Route path='/about' exact element={<About/>}/>
         <Route path='/contact' exact element={<Contact/>}/>
-        <Route path='/product/:id' exact element={<Product/>}/>
+        <Route path='/product/${_id}' exact element={<Product/>}/>
       </Routes>
     </BrowserRouter>
    </>
