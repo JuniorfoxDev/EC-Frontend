@@ -70,13 +70,13 @@ const Product = () => {
                                     </div>
                                 </div>
                                 <div className="grid grid-cols-3 gap-3">
-                                    {product.sizes && product.sizes.map((item, i) => (
+                                    {product.sizes && product.sizes.map((size, i) => (
                                         <div
                                             key={i}
                                             className={`border rounded-md text-center py-3 font-medium ${item.enabled ? "hover:border-black cursor-pointer" : "cursor-not-allowed bg-black/[0.1] opacity-50"} ${selectedSize === item.size ? "border-black" : ""}`}
-                                            onClick={() => setSelectedSize(item.sizes)}
+                                            onClick={() => setSelectedSize(size)}
                                         >
-                                            {item.sizes}
+                                            {size}
                                         </div>
                                     ))}
                                 </div>
