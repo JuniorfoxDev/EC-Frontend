@@ -54,7 +54,7 @@ const Product = () => {
                             <div className="mb-2 text-[34px] leading-tight font-semibold">
                                 {product.name}
                             </div>
-                            <div className="flex items-center">
+                            <div className="flex items-center mb-4">
                                 <p className="mr-2 text-lg font-semibold">MRP : &#8377; {product.price} </p>
                             </div>
                             <div className="font-semibold text-black/[0.5] text-base">
