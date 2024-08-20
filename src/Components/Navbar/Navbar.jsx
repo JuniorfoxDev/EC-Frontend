@@ -19,7 +19,7 @@ const Navbar = () => {
           <NavLink to='/Contact'>
               Contact
           </NavLink>
-          <div className='relative' onClick={() => setIsDrodownOpen(true)} >
+          <div className='relative' onClick={() => setIsDrodownOpen(true)} onMouseLeave={() => setIsDrodownOpen(false)} >
           <NavLink to='#' className='flex items-center'>
             Men's Shoes
           </NavLink>
