@@ -23,7 +23,7 @@ const Subcategory = () => {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                     {products.map((product) => (
                         <div key={product._id} className="border p-4 rounded-md">
-                            <img src={product.images[0]?.url} alt={product.name} className="w-auto h-[150px] object-cover mb-2" />
+                            <img src={product.images[0]?.url} alt={product.name} className="w-full h-[150px] object-cover mb-2" />
                             <h3 className="font-bold">{product.name}</h3>
                             <p>&#8377;{product.price}</p>
                         </div>
