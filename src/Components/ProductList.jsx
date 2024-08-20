@@ -29,7 +29,7 @@ const ProductList = () => {
   return (
     <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5  px-5 md:px-0'>
       {loading ? (
-        <div className='flex flex-col justify-center items-center gap-5 bg-gray-100 py-4'>
+        <div className='flex flex-col justify-center items-center gap-5 py-4 opacity-20'>
           <img src="https://nike-shoe-store.vercel.app/logo.svg" alt="" className='w-[60px] md:w-[80px]' />
           <p className='text-black/[0.9] font-semibold text-xl'>Loading...</p>
         </div>
