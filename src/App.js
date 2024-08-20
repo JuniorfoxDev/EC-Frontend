@@ -5,6 +5,7 @@ import Product from './Pages/Product'
 import Contact from './Pages/Contact'
 import About from './Pages/About'
 import Subcategory from './Pages/Subcategory'
+import Loading from './Pages/Loading'
 export default function App({_id}) {
   return (
    <>
