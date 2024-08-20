@@ -4,6 +4,7 @@ import Home from './Pages/Home'
 import Product from './Pages/Product'
 import Contact from './Pages/Contact'
 import About from './Pages/About'
+import Subcategory from './Pages/Subcategory'
 export default function App({_id}) {
   return (
    <>
@@ -14,6 +15,7 @@ export default function App({_id}) {
         <Route path='/about' exact element={<About/>}/>
         <Route path='/contact' exact element={<Contact/>}/>
         <Route path='/product/:id' exact element={<Product/>}/>
+        <Route path='/subcategory/:subcategory' exact element={<Subcategory/>}/>
       </Routes>
     </BrowserRouter>
    </>
