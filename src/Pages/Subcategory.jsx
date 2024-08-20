@@ -20,7 +20,7 @@ const Subcategory = () => {
     return (
             <div className="mx-auto p-4">
                 <h1 className="text-2xl font-bold mb-4">Products in {subcategory}</h1>
-                <div className="grid grid-cols-3 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                     {products.map((product) => (
                         <div key={product._id} className="border p-4 rounded-md">
                             <img src={product.images[0]?.url} alt={product.name} className="w-auto h-[150px] object-cover mb-2" />
