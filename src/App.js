@@ -15,7 +15,7 @@ export default function App({_id}) {
         <Route path='/about' exact element={<About/>}/>
         <Route path='/contact' exact element={<Contact/>}/>
         <Route path='/product/:id' exact element={<Product/>}/>
-        <Route path='categories/subcategory/:subcategory' exact element={<Subcategory/>}/>
+        <Route path='categories/:subcategory' exact element={<Subcategory/>}/>
       </Routes>
     </BrowserRouter>
    </>
