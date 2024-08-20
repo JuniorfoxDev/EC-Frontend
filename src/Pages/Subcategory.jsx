@@ -19,7 +19,6 @@ const Subcategory = () => {
       };
     return (
         <div className="flex gap-4">
-            <Navbar />
             <div className="mx-auto p-4">
                 <h1 className="text-2xl font-bold mb-4">Products in {subcategory}</h1>
                 <div className="grid grid-cols-3 gap-4">
