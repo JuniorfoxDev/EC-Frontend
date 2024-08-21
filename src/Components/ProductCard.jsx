@@ -3,10 +3,10 @@ import { Link, Navigate, useNavigate } from "react-router-dom";
 const ProductCard = ({_id,images, name, price}) => {
     return (
         <Link to={`/product/${_id}`} className="transform overflow-hidden bg-white duration-300 hover:scale-95 cursor-pointer">
-            {product.images && Array.isArray(product.images) && product.images.length > 0 &&
-                product.images.map((img, index) => (
+            {images && Array.isArray(images) && images.length > 0 &&
+                images.map((img, index) => (
                     img && img[0].url && (
-                        <img key={index} src={img[0].url} alt={product.name} />
+                        <img key={index} src={img[0].url} alt={name} />
                     )
                 ))
             }
