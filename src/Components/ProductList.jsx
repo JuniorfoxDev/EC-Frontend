@@ -11,7 +11,9 @@ const ProductList = () => {
 
   const fetchProducts = async () => {
     try {
-      const response = await fetch(`https://ec-backend-server.vercel.app/products`);
+      const response = await fetch(`https://ec-backend-server.vercel.app/products`,{
+        credentials: 'include'
+      });
       const data = await response.json();
       console.log(data);
       if (data) {

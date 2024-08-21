@@ -17,7 +17,7 @@ const Product = () => {
     const fetchProduct = async () => {
         try {
             const response = await fetch(`https://ec-backend-server.vercel.app/products/${id}`);
-            const data = await response.json(); // Await the JSON parsing
+            const data = await response.json(); 
             if (data) {
                 setProduct(data);
             }
