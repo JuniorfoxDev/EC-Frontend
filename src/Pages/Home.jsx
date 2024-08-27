@@ -5,6 +5,7 @@ import Fit from '../Components/Fit/Fit'
 import ProductList from '../Components/ProductList'
 import Ab from '../Components/Ab'
 import Cat from '../Components/Cat'
+import BS from '../Components/BS'
 const Home = () => {
   
   return (
@@ -15,6 +16,7 @@ const Home = () => {
         <Cat/>
         <Fit/>
         <ProductList/>
+        <BS/>
     </div>
     </>
   )
