@@ -5,10 +5,12 @@ import Product from './Pages/Product'
 import Contact from './Pages/Contact'
 import About from './Pages/About'
 import Subcategory from './Pages/Subcategory'
+import Promo from './Components/Promo'
 export default function App({_id}) {
   return (
    <>
     <BrowserRouter>
+       <Promo/>
        <Navbar/>
       <Routes>
         <Route path='/' exact element={<Home/>}/>
