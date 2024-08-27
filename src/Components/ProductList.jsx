@@ -5,10 +5,11 @@ import "./Banner/Banner.css"
 const ProductList = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
-
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 3;
   useEffect(() => {
     fetchProducts();
-  }, []);
+  }, [currentPage]);
 
   const fetchProducts = async () => {
     try {
@@ -29,7 +30,13 @@ const ProductList = () => {
       setLoading(false);
     }
   };
-
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = products.slice(indexOfFirstItem, indexOfLastItem);
+  const totalPages = Math.ceil(products.length / itemsPerPage);
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
+};
   return (
     // <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5  px-5 md:px-0'>
     //   {loading ? (
@@ -47,8 +54,8 @@ const ProductList = () => {
       <div className='pt-20 pb-10 flex justify-between items-center'>
         <h2 className='poppins-bold text-4xl'>New Arrivals</h2>
         <div className='buttons flex justify-center space-x-4'>
-          <button className='px-4 py-4 bg-black text-white rounded-full hover:bg-black[0.4] cursor-pointer'><FaAngleLeft /></button>
-          <button className='px-4 py-4 bg-black text-white rounded-full hover:bg-black[0.4] cursor-pointer'> <FaAngleRight /></button>
+          <button className='px-4 py-4 bg-black text-white rounded-full hover:bg-black[0.4] cursor-pointer' onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 1}><FaAngleLeft /></button>
+          <button className='px-4 py-4 bg-black text-white rounded-full hover:bg-black[0.4] cursor-pointer'  onClick={() => handlePageChange(currentPage + 1)} disabled={currentPage === totalPages}> <FaAngleRight /></button>
         </div>
       </div>
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
@@ -58,7 +65,7 @@ const ProductList = () => {
             <p className='text-black/[0.9] font-semibold text-xl'>Loading...</p>
           </div>
           ) : (
-              products.map((product) => (
+              products.slice(0,4).map((product) => (
                   <ProductCard key={product._id} {...product} />
               ))
           )}
