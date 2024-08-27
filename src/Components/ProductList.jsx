@@ -38,7 +38,7 @@ const ProductList = () => {
     setCurrentPage(page);
 };
   return (
-    <div className='h-auto px-8 pb-10 md:px-28 '>
+    <div className=' px-8 pb-10 md:px-28 '>
       <div className=' pt-10 md:pt-20 pb-10 flex justify-between items-center'>
         <h2 className='poppins-bold text-2xl md:text-4xl'>New Arrivals</h2>
         <div className='buttons flex justify-center space-x-4'>
