@@ -4,6 +4,7 @@ import Banner from '../Components/Banner/Banner'
 import Fit from '../Components/Fit/Fit'
 import ProductList from '../Components/ProductList'
 import Ab from '../Components/Ab'
+import Cat from '../Components/Cat'
 const Home = () => {
   
   return (
@@ -11,6 +12,7 @@ const Home = () => {
     <div className='w-full'>
         <Banner/>
         <Ab/>
+        <Cat/>
         <Fit/>
         <ProductList/>
     </div>
