@@ -6,6 +6,7 @@ import ProductList from '../Components/ProductList'
 import Ab from '../Components/Ab'
 import Cat from '../Components/Cat'
 import BS from '../Components/BS'
+import Nw from '../Components/Nw'
 const Home = () => {
   
   return (
@@ -17,6 +18,7 @@ const Home = () => {
         <Fit/>
         <ProductList/>
         <BS/>
+        <Nw/>
     </div>
     </>
   )
