@@ -38,7 +38,7 @@ const BS = () => {
                   </Link>
               </div>
           </div>
-          <div className='grid grid-flow-col-dense grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-5'>
+          <div className='grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-5'>
               {loading ? (
                   <div className='flex flex-col justify-center items-center gap-5 py-4 opacity-20'>
                       <img src="https://nike-shoe-store.vercel.app/logo.svg" alt="" className='w-[60px] md:w-[80px]' />
