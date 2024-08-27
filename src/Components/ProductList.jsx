@@ -65,15 +65,9 @@ const ProductList = () => {
             <p className='text-black/[0.9] font-semibold text-xl'>Loading...</p>
           </div>
           ) : (
-              <div>
-                {currentItems && currentItems.length === 0 ? (
-                  <p>No products found.</p>
-                ) : (
-                  currentItems.map((product) => (
-                    <ProductCard key={product._id} {...product} />
-                  ))
-                 )}
-              </div>
+              currentItems.map((product) => (
+                  <ProductCard key={product._id} {...product} />
+              ))
           )}
       </div>
     </div>
