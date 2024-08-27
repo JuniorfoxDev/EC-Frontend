@@ -29,7 +29,7 @@ const BS = () => {
     }
   };
   return (
-      <div className=' px-8 md:px-28 py-20'>
+      <div className=' px-8 md:px-28 py-10'>
           <div className=' pt-10 md:pt-20 pb-10 flex justify-between items-center'>
               <h2 className='poppins-bold text-2xl md:text-4xl'>All Products</h2>
               <div className='buttons flex justify-center space-x-4'>
