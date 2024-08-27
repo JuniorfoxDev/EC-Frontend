@@ -20,7 +20,7 @@ const Subcategory = () => {
         }
       };
     return (
-            <div className="mx-auto p-4">
+            <div className="mx-auto px-28 py-14">
                 <h1 className="text-2xl font-bold mb-4">Products in {subcategory}</h1>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 {loading ? (
@@ -28,13 +28,9 @@ const Subcategory = () => {
                     <img src="https://nike-shoe-store.vercel.app/logo.svg" alt="" className='w-[60px] md:w-[80px]' />
                     <p className='text-black/[0.9] font-semibold text-xl'>Loading...</p>
                   </div>
-                ) : (products.map((product) => (
-                        <div key={product._id} className="border p-4 rounded-md">
-                            <img src={product.images[0]?.url} alt={product.name} width={400} height={400} className="object-cover mb-2" />
-                            <h3 className="font-bold">{product.name}</h3>
-                            <p>&#8377;{product.price}</p>
-                        </div>
-                    ))
+          ) : (products.map((product) => (
+            <ProductCard key={product._id} {...product} />
+          ))
                 )}
                 </div>
             </div>
