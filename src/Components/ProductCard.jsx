@@ -14,7 +14,7 @@ const ProductCard = ({_id,images, name, price,subcategory}) => {
     return (
         <Link to={`/product/${_id}`} className='min-w-[250px] px-[10px] py-[12px]'>
         {images && (
-                <img src={currentImage} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} alt={name}  className='w-[350px] h-[350px]'/>
+                <img src={currentImage} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} alt={name}  className='w-[350px] h-[350px]  transition-all duration-300 ease-in-out'/>
             )}
           <div className='py-2 relative'>
             <span className='poppins-medium text-[18px] text-gray-500'>{subcategory}</span>
