@@ -1,5 +1,5 @@
 import { Link, Navigate, useNavigate } from "react-router-dom";
-
+import {FaPlus} from "react-icons/fa";
 const ProductCard = ({_id,images, name, price,subcategory}) => {
     return (
         <Link to={`/product/${_id}`} className=' min-w-[250px] px-[10px] py-[12px] border border-[#cce7d0] rounded-[25px] shadow-[20px_20px_30px_rgba(0,0,0,0.02)] mx-[15px] my-0 transition ease delay-150 hover:shadow-[20px_20px_30px_rgba(0,0,0,0.06)]'>
