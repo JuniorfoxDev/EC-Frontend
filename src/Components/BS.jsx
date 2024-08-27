@@ -33,23 +33,23 @@ const BS = () => {
           <div className=' pt-10 md:pt-20 pb-10 flex justify-between items-center'>
               <h2 className='poppins-bold text-2xl md:text-4xl'>All Products</h2>
               <div className='buttons flex justify-center space-x-4'>
-                <Link className='underline text-xl poppins-bold'>
-                 See All
-                </Link>
+                  <Link className='underline text-xl poppins-bold'>
+                      See All
+                  </Link>
               </div>
           </div>
-          <div className='grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-5'>
-        {loading ? (
-          <div className='flex flex-col justify-center items-center gap-5 py-4 opacity-20'>
-            <img src="https://nike-shoe-store.vercel.app/logo.svg" alt="" className='w-[60px] md:w-[80px]' />
-            <p className='text-black/[0.9] font-semibold text-xl'>Loading...</p>
+          <div className='grid grid-flow-col-dense grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-5'>
+              {loading ? (
+                  <div className='flex flex-col justify-center items-center gap-5 py-4 opacity-20'>
+                      <img src="https://nike-shoe-store.vercel.app/logo.svg" alt="" className='w-[60px] md:w-[80px]' />
+                      <p className='text-black/[0.9] font-semibold text-xl'>Loading...</p>
+                  </div>
+              ) : (
+                  products.slice(0,4).map((product) => (
+                      <ProductCard key={product._id} {...product} />
+                  ))
+              )}
           </div>
-          ) : (
-              products.map((product) => (
-                  <ProductCard key={product._id} {...product} />
-              ))
-          )}
-      </div>
       </div>
   )
 }
