@@ -8,9 +8,9 @@ const ProductCard = ({_id,images, name, price,subcategory}) => {
             )}
           <div className='px-4 py-2 relative'>
             <span className='poppins-bold text-xl text-gray-500'>{subcategory}</span>
-            <h2 className='poppins-medium text-3xl py-2'>{name}</h2>
+            <h2 className='poppins-medium text-3xl w-20 py-2'>{name}</h2>
             <h4 className='poppins-extrabold text-xl'>Rs.{price}.00</h4>
-          <button className='px-4 py-4 bg-black text-white rounded-full hover:bg-black[0.4] cursor-pointer absolute right-6 top-6'><FaPlus /></button>
+          <button className='px-4 py-4 bg-black text-white rounded-full hover:bg-black[0.4] cursor-pointer absolute right-8 top-6'><FaPlus /></button>
           </div>
         </Link>
     )
