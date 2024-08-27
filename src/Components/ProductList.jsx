@@ -58,7 +58,7 @@ const ProductList = () => {
           <button className='px-4 py-4 bg-black text-white rounded-full hover:bg-black[0.4] cursor-pointer'  onClick={() => handlePageChange(currentPage + 1)} disabled={currentPage === totalPages}> <FaAngleRight /></button>
         </div>
       </div>
-      <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5'>
+      <div className='grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-5'>
         {loading ? (
           <div className='flex flex-col justify-center items-center gap-5 py-4 opacity-20'>
             <img src="https://nike-shoe-store.vercel.app/logo.svg" alt="" className='w-[60px] md:w-[80px]' />
