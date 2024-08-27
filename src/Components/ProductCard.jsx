@@ -1,10 +1,20 @@
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import {FaPlus} from "react-icons/fa";
+import { useState } from "react";
 const ProductCard = ({_id,images, name, price,subcategory}) => {
+  const [currentImage,setCurrentImage] = useState(images[0].url);
+  const handleMouseEnter = () => {
+    if(images.length > 1){
+      setCurrentImage(images[1].url)
+    }
+  }
+  const handleMouseLeave = () => {
+    setCurrentImage(images[0].url)
+  }
     return (
         <Link to={`/product/${_id}`} className='min-w-[250px] px-[10px] py-[12px]'>
         {images && (
-                <img src={images[0].url} alt={name}  className='w-[350px] h-[350px]'/>
+                <img src={currentImage} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} alt={name}  className='w-[350px] h-[350px]'/>
             )}
           <div className='py-2 relative'>
             <span className='poppins-medium text-[18px] text-gray-500'>{subcategory}</span>
