@@ -80,7 +80,7 @@ const AllProduct = () => {
 
   return (
     <div className='h-auto py-6 bg-[#e4e4e4]'>
-      <div className='py-10 px-10 flex items-center justify-between'>
+      <div className='py-10 px-10 flex flex-col md:flex-row gap-4 md:gap-0 items-center md:justify-between'>
         <div className='flex items-center bg-white px-4 py-4 gap-4 rounded-full w-[250px]'>
           <input 
             type="text" 
