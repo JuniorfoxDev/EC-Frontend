@@ -34,8 +34,8 @@ const Product = () => {
   </div>;
 
     return (
-        <div className="w-full md:py-20">
-            <div className="w-full max-w-[1280px] px-5 md:px-10 mx-auto">
+        <div className="w-full md:py-15">
+            <div className="w-full max-w-[1280px] px-5 md:px-8 mx-auto">
                 {product ? (
                     <div className="flex flex-col lg:flex-row md:px-10 gap-[50px] lg:gap-[100px]">
                         <div className="w-full md:w-auto flex-[1.5] max-w-[500px] lg:max-w-full mx-auto lg:mx-0">
@@ -54,10 +54,13 @@ const Product = () => {
                             </div>
                         </div>
                         <div className="flex-[1] py-3">
+                            <div className="mb-2 text-[28px] font-medium">
+                                {product.subcategory}
+                            </div>
                             <div className="mb-2 text-[34px] leading-tight font-semibold">
                                 {product.name}
                             </div>
-                            <div className="flex items-center mb-4">
+                            <div className="flex items-center mb-2">
                                 <p className="mr-2 text-lg font-semibold">MRP : &#8377; {product.price} </p>
                             </div>
                             <div className="font-semibold text-black/[0.5] text-base">
@@ -66,7 +69,7 @@ const Product = () => {
                             <div className="text-base font-semibold text-black/[0.5] pb-8">
                                 Also Including all duties
                             </div>
-                            <div className="mb-10">
+                            <div className="mb-5">
                                 <div className="flex items-center justify-between my-6">
                                     <div className="text-base font-semibold">Select Size</div>
                                     <div className="text-base font-medium text-black/[0.5] cursor-pointer">
@@ -89,14 +92,14 @@ const Product = () => {
                                 Add To Cart
                             </button>
                             <button className="w-full py-3 rounded-full text-white mt-4 text-center bg-black text-lg font-medium transition-transform active:scale-95 mb-3 hover:opacity-75">
-                                <div className="flex flex-row items-center justify-center">
+                                <div className="flex flex-row gap-2 items-center justify-center">
                                      <p>Favourite</p>    
                                      <IoMdHeartEmpty size={20} />
                                 </div>
                             </button>
                             <div>
                                 <div className="text-lg font-bold mb-5">Product Details</div>
-                                <div className="text-base mb-5">
+                                <div className="text-base text-pretty mb-5">
                                     {product.description}
                                 </div>
                             </div>
