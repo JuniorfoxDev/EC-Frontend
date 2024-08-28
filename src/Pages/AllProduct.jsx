@@ -61,7 +61,25 @@ const AllProduct = () => {
         updatedProducts.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
         break;
       case 'Top':
-        updatedProducts.sort((a, b) => b.Low - a.Low);
+        updatedProducts.sort((a, b) => {
+          if(a.subcategory === 'Top' && b.subcategory !== 'Top') return -1;
+          if(a.subcategory !== 'Top' && b.subcategory === 'Top') return 1;
+          return 0;
+        });
+        break;
+      case 'Mid':
+        updatedProducts.sort((a, b) => {
+          if(a.subcategory === 'Mid' && b.subcategory !== 'Mid') return -1;
+          if(a.subcategory !== 'Mid' && b.subcategory === 'Mid') return 1;
+          return 0;
+        });
+        break;
+      case 'Low':
+        updatedProducts.sort((a, b) => {
+          if(a.subcategory === 'Low' && b.subcategory !== 'Low') return -1;
+          if(a.subcategory !== 'Low' && b.subcategory === 'Low') return 1;
+          return 0;
+        });
         break;
       default:
         break;
@@ -102,6 +120,8 @@ const AllProduct = () => {
           >
             <option value="New" className='poppins-regular text-xl p-2'>New</option>
             <option value="Top" className='poppins-regular text-xl p-2'>Top</option>
+            <option value="Mid" className='poppins-regular text-xl p-2'>Mid</option>
+            <option value="Low" className='poppins-regular text-xl p-2'>Low</option>
             <option value="Price: Low-High" className='poppins-regular text-xl p-2'>Price: Low-High</option>
             <option value="Price: High-Low" className='poppins-regular text-xl p-2'>Price: High-Low</option>
           </select>
