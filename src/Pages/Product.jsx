@@ -38,7 +38,7 @@ const Product = () => {
             id: product.id,
             name:product.name,
             price: product.price,
-            size:{size},
+            size:selectedSize,
             image:product.images[0].url,
         };
         cart.push(cartItem);
