@@ -97,7 +97,7 @@ const Product = () => {
                                      <IoMdHeartEmpty size={20} />
                                 </div>
                             </button>
-                            <div>
+                            <div className="py-2">
                                 <div className="text-lg font-bold mb-5">Product Details</div>
                                 <div className="text-base text-pretty mb-5">
                                     {product.description}
