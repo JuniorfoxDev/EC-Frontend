@@ -8,7 +8,8 @@ import Subcategory from './Pages/Subcategory'
 import Promo from './Components/Promo'
 import Footer from './Components/Footer'
 import AllProduct from './Pages/AllProduct'
-export default function App({_id}) {
+import Cart from './Pages/Cart'
+export default function App() {
   return (
    <>
     <BrowserRouter>
@@ -21,6 +22,7 @@ export default function App({_id}) {
         <Route path='/product/:id' exact element={<Product/>}/>
         <Route path='categories/:subcategory' exact element={<Subcategory/>}/>
         <Route path='/all-product' exact element={<AllProduct/>} />
+        <Route path='/cart' element={<Cart/>}/>
       </Routes>
       <Footer/>
     </BrowserRouter>
