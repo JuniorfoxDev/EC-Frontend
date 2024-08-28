@@ -3,7 +3,7 @@ import { Carousel } from "react-responsive-carousel";
 import { IoMdHeartEmpty } from "react-icons/io";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-
+import "../Components/Banner/Banner.css"
 const Product = () => {
     const [selectedSize, setSelectedSize] = useState();
     const { id } = useParams();
@@ -53,20 +53,20 @@ const Product = () => {
                                 </Carousel>
                             </div>
                         </div>
-                        <div className="flex-[1] py-3">
-                            <div className="mb-2 text-[18px] text-gray-500 font-medium">
+                        <div className="flex-[1] py-2">
+                            <div className="mb-2 text-[18px] poppins-extrabold text-gray-300">
                                 {product.subcategory}
                             </div>
-                            <div className="mb-2 text-[34px] leading-tight font-semibold">
+                            <div className="mb-2 text-[34px] leading-tight poppins-semibold">
                                 {product.name}
                             </div>
                             <div className="flex items-center mb-2">
-                                <p className="mr-2 text-lg font-semibold">MRP : &#8377; {product.price} </p>
+                                <p className="mr-2 text-lg poppins-bold">MRP : &#8377; {product.price}.00 </p>
                             </div>
-                            <div className="font-semibold text-black/[0.5] text-base">
+                            <div className="poppins-medium text-black/[0.5] text-base">
                                 incl. all taxes.
                             </div>
-                            <div className="text-base font-semibold text-black/[0.5] pb-8">
+                            <div className="text-base poppins-medium text-black/[0.5] pb-8">
                                 Also Including all duties
                             </div>
                             <div className="mb-5">
@@ -99,7 +99,7 @@ const Product = () => {
                             </button>
                             <div className="py-2">
                                 <div className="text-lg font-bold mb-5">Product Details</div>
-                                <div className="text-base text-pretty mb-5">
+                                <div className="text-base poppins-regular mb-5">
                                     {product.description}
                                 </div>
                             </div>
