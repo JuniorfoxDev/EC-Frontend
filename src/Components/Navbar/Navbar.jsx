@@ -5,6 +5,11 @@ import { HiShoppingBag } from "react-icons/hi2";
 
 const Navbar = () => {
   const [isDropdownOpen,setIsDrodownOpen] = useState(false)
+  const [cartCount,setCartCount] = useState(0);
+  useEffect(() => {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    setCartCount(cart.length);
+  },[]);
   return (
     <header className='w-full h-[50px] md:h-[40px] bg-white flex justify-between px-4 pt-4 pb-4 md:px-10 items-center  z-20 sticky top-0 transition-transform duration-300'>
           <div className='logo'>
@@ -33,8 +38,14 @@ const Navbar = () => {
           </div>
           </div>
           <div className='car flex gap-5 items-center'>
-          <NavLink to='/cart'>
+          <NavLink to='/cart' className="relative">
                   <HiShoppingBag size='2em'/>
+                  {cartCount > 0 && (
+                    <span className='absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs'>
+                      {cartCount}
+                    </span>
+                  )
+                  }
           </NavLink>
           </div>
     </header>
