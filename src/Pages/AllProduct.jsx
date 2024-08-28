@@ -5,31 +5,69 @@ import ProductCard from '../Components/ProductCard';
 
 const AllProduct = () => {
   const [products, setProducts] = useState([]);
+  const [filteredProducts, setFilteredProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
   const [sortOption, setSortOption] = useState('New');
 
   useEffect(() => {
-    fetchProducts(searchTerm, sortOption);
-  }, [searchTerm, sortOption]);
+    fetchProducts();
+  }, []);
 
-  const fetchProducts = async (search = '', sort = 'New') => {
+  useEffect(() => {
+    filterAndSortProducts();
+  }, [searchTerm, sortOption, products]);
+
+  const fetchProducts = async () => {
     try {
-      const response = await fetch(`https://ec-backend-server.vercel.app/products?search=${search}`, {
+      const response = await fetch(`https://ec-backend-server.vercel.app/products`, {
         method: 'GET',
         credentials: 'include',
       });
       const data = await response.json();
       if (data) {
         setProducts(data);
+        setFilteredProducts(data);
       } else {
         setProducts([]);
+        setFilteredProducts([]);
       }
       setLoading(false);
     } catch (error) {
       console.error(error);
       setLoading(false);
     }
+  };
+
+  const filterAndSortProducts = () => {
+    let updatedProducts = [...products];
+
+    // Filter by search term
+    if (searchTerm) {
+      updatedProducts = updatedProducts.filter(product =>
+        product.name.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+    }
+
+    // Sort by selected option
+    switch (sortOption) {
+      case 'Price: Low-High':
+        updatedProducts.sort((a, b) => a.price - b.price);
+        break;
+      case 'Price: High-Low':
+        updatedProducts.sort((a, b) => b.price - a.price);
+        break;
+      case 'New':
+        updatedProducts.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+        break;
+      case 'Top':
+        updatedProducts.sort((a, b) => b.rating - a.rating);
+        break;
+      default:
+        break;
+    }
+
+    setFilteredProducts(updatedProducts);
   };
 
   const handleSearchChange = (e) => {
@@ -63,9 +101,7 @@ const AllProduct = () => {
             onChange={handleSortChange}
           >
             <option value="New" className='poppins-regular text-xl p-2'>New</option>
-            <option value="Low" className='poppins-regular text-xl p-2'>Low</option>
             <option value="Top" className='poppins-regular text-xl p-2'>Top</option>
-            <option value="High" className='poppins-regular text-xl p-2'>High</option>
             <option value="Price: Low-High" className='poppins-regular text-xl p-2'>Price: Low-High</option>
             <option value="Price: High-Low" className='poppins-regular text-xl p-2'>Price: High-Low</option>
           </select>
@@ -79,7 +115,7 @@ const AllProduct = () => {
               <p className='text-black/[0.9] font-semibold text-xl'>Loading...</p>
             </div>
           ) : (
-            products.map((product) => (
+            filteredProducts.map((product) => (
               <ProductCard key={product._id} {...product} />
             ))
           )}
