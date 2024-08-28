@@ -15,10 +15,10 @@ const Cart = () => {
 
     const handleDelete = (index) => {
         const updatedCart = [...cart];
-        updatedCart.splice(index, 1); // Remove the item at the specified index
+        updatedCart.splice(index, 1); 
         setCart(updatedCart);
         localStorage.setItem('cart', JSON.stringify(updatedCart)); // Update the localStorage
-        calculateSubtotal(updatedCart); // Update the subtotal
+        calculateSubtotal(updatedCart); 
     };
 
     const handleEdit = (index) => {
@@ -32,9 +32,9 @@ const Cart = () => {
         updatedCart[index].size = newSize;
         updatedCart[index].count = newCount;
         setCart(updatedCart);
-        localStorage.setItem('cart', JSON.stringify(updatedCart)); // Update the localStorage
+        localStorage.setItem('cart', JSON.stringify(updatedCart)); 
         setEditingIndex(null);
-        calculateSubtotal(updatedCart); // Update the subtotal
+        calculateSubtotal(updatedCart); 
     };
 
     const calculateSubtotal = (cartItems) => {
