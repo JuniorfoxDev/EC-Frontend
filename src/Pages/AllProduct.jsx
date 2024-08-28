@@ -61,7 +61,7 @@ const AllProduct = () => {
         updatedProducts.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
         break;
       case 'Top':
-        updatedProducts.sort((a, b) => b.rating - a.rating);
+        updatedProducts.sort((a, b) => b.Low - a.Low);
         break;
       default:
         break;

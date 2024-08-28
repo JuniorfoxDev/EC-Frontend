@@ -21,7 +21,7 @@ const Subcategory = () => {
         }
       };
     return (
-      <div className="mx-auto px-28 py-14">
+      <div className="mx-auto px-4 md:px-28 py-14">
         <h1 className="text-2xl font-bold mb-4">Products in {subcategory}</h1>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
           {loading ? (
