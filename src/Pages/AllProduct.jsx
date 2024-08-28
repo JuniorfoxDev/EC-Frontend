@@ -29,7 +29,7 @@ const AllProduct = () => {
     }
   };
   return (
-    <div className='h-auto py-6 bg-[#fffbfb]'>
+    <div className='h-auto py-6 bg-[#e4e4e4]'>
       <div className='py-10 px-10 flex items-center justify-between'>
          <div className='flex items-center bg-white px-4 py-4 gap-4 rounded-full w-[250px]'>
            <input type="text" placeholder='Search' className='outline-none poppins-regular' />
