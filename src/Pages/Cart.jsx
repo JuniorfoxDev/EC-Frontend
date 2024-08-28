@@ -20,7 +20,7 @@ const Cart = () => {
             <div className="w-full max-w-[1280px] px-5 md:px-10 mx-auto">
                 <h1 className="text-2xl font-semibold mb-6">Your Cart</h1>
                 {cart.length === 0 ? (
-                    <p>Your cart is empty</p>
+                    <p className='text-center text-xl py-6'>Your cart is empty</p>
                 ) : (
                     <div className="flex flex-col gap-6">
                         {cart.map((item, index) => (
