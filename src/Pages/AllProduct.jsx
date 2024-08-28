@@ -28,7 +28,6 @@ const AllProduct = () => {
       setLoading(false);
     }
   };
-
   return (
     <div className='h-auto py-6 bg-[#F5F5F5]'>
       <div className='py-10 px-10 flex items-center justify-between'>
