@@ -43,6 +43,7 @@ const Product = () => {
         };
         cart.push(cartItem);
         localStorage.setItem('cart',JSON.stringify(cart));
+        console.log(cartItem);
         navigate('/cart');
     }
     return (
