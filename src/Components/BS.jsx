@@ -33,7 +33,7 @@ const BS = () => {
           <div className=' pt-10 md:pt-20 pb-10 flex justify-between items-center'>
               <h2 className='poppins-bold text-2xl md:text-4xl'>All Products</h2>
               <div className='buttons flex justify-center space-x-4'>
-                  <Link className='underline text-xl poppins-bold'>
+                  <Link to='/all-product' className='underline text-xl poppins-bold'>
                       See All
                   </Link>
               </div>
