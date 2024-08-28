@@ -5,6 +5,7 @@ import ProductCard from '../Components/ProductCard';
 const AllProduct = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [searchTerm,setSearchTerm] = useState('');
   useEffect(() => {
     fetchProducts();
   }, []);
@@ -28,11 +29,20 @@ const AllProduct = () => {
       setLoading(false);
     }
   };
+  useEffect(() => {
+    const delayDebounce = setTimeout(() => {
+      fetchProducts()
+    },300)
+    return () => clearTimeout(delayDebounce)
+  },[searchTerm,fetchProducts])
+  const handleSearchChange = (e) => {
+    setSearchTerm(e.target.value);
+  }
   return (
     <div className='h-auto py-6 bg-[#e4e4e4]'>
       <div className='py-10 px-10 flex items-center justify-between'>
          <div className='flex items-center bg-white px-4 py-4 gap-4 rounded-full w-[250px]'>
-           <input type="text" placeholder='Search' className='outline-none poppins-regular' />
+           <input type="text" placeholder='Search' className='outline-none poppins-regular' value={searchTerm} onChange={handleSearchChange}/>
          </div>
          <div>
           <label htmlFor="" className='mr-2 poppins-regular text-xl'>Sort By : </label>
