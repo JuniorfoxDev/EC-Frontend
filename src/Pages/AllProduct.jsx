@@ -15,7 +15,7 @@ const AllProduct = () => {
 
   const fetchProducts = async (search = '', sort = 'New') => {
     try {
-      const response = await fetch(`https://ec-backend-server.vercel.app/products?search=${search}&sort=${sort}`, {
+      const response = await fetch(`https://ec-backend-server.vercel.app/products?search=${search}`, {
         method: 'GET',
         credentials: 'include',
       });
