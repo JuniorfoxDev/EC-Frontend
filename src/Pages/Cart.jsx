@@ -13,11 +13,6 @@ const Cart = () => {
         setCart(updatedCart);
         localStorage.setItem('cart', JSON.stringify(updatedCart)); // Update the localStorage
     };
-    const handleEditItem = (index) => {
-        setEditingIndex(index);
-        setNewSize(cart[index].size);
-        setProductCount(cart[index].count || 1);
-    }
     return (
         <div className="w-full md:py-20">
             <div className="w-full max-w-[1280px] px-5 md:px-10 mx-auto">
