@@ -33,7 +33,7 @@ const Navbar = () => {
           </div>
           </div>
           <div className='car flex gap-5 items-center'>
-          <NavLink>
+          <NavLink to='/cart'>
                   <HiShoppingBag size='2em'/>
           </NavLink>
           </div>
