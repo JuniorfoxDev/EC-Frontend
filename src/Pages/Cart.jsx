@@ -5,10 +5,12 @@ const Cart = () => {
     const [editingIndex, setEditingIndex] = useState(null);
     const [newSize, setNewSize] = useState("");
     const [newCount, setNewCount] = useState(1);
+    const [subtotal, setSubtotal] = useState(0);
 
     useEffect(() => {
         const storedCart = JSON.parse(localStorage.getItem('cart')) || [];
         setCart(storedCart);
+        calculateSubtotal(storedCart);
     }, []);
 
     const handleDelete = (index) => {
@@ -16,6 +18,7 @@ const Cart = () => {
         updatedCart.splice(index, 1); // Remove the item at the specified index
         setCart(updatedCart);
         localStorage.setItem('cart', JSON.stringify(updatedCart)); // Update the localStorage
+        calculateSubtotal(updatedCart); // Update the subtotal
     };
 
     const handleEdit = (index) => {
@@ -31,6 +34,12 @@ const Cart = () => {
         setCart(updatedCart);
         localStorage.setItem('cart', JSON.stringify(updatedCart)); // Update the localStorage
         setEditingIndex(null);
+        calculateSubtotal(updatedCart); // Update the subtotal
+    };
+
+    const calculateSubtotal = (cartItems) => {
+        const total = cartItems.reduce((sum, item) => sum + (item.price * (item.count || 1)), 0);
+        setSubtotal(total);
     };
 
     return (
@@ -83,7 +92,9 @@ const Cart = () => {
                                             <div>
                                                 <p className="text-gray-600">Size: {item.size}</p>
                                                 <p className="text-gray-600">Count: {item.count || 1}</p>
-                                                <p className="text-gray-600">Price: &#8377; {item.price}</p>
+                                                <p className="text-gray-600">
+                                                    Price: &#8377; {item.price * (item.count || 1)}
+                                                </p>
                                                 <button
                                                     onClick={() => handleEdit(index)}
                                                     className="text-blue-500 hover:text-blue-700 mt-2"
@@ -102,6 +113,9 @@ const Cart = () => {
                                 </button>
                             </div>
                         ))}
+                        <div className="flex justify-end text-xl font-semibold mt-6">
+                            Subtotal: &#8377; {subtotal}
+                        </div>
                     </div>
                 )}
             </div>
