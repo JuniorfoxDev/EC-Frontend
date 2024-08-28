@@ -1,7 +1,6 @@
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import { FaPlus } from "react-icons/fa";
 import { useState } from "react";
-import Product from "../Pages/Product";
 const ProductCard = ({ _id, images, name, price, subcategory }) => {
   const [currentImage, setCurrentImage] = useState(images[0].url);
   const navigate = useNavigate();

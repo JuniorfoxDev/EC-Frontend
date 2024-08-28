@@ -1,0 +1,128 @@
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+
+const Cart = () => {
+    const [cart, setCart] = useState([]);
+    const [editingIndex, setEditingIndex] = useState(null);
+    const [newSize, setNewSize] = useState('');
+    const [productCount, setProductCount] = useState(1);
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        const storedCart = JSON.parse(localStorage.getItem('cart')) || [];
+        setCart(storedCart);
+    }, []);
+
+    const handleRemoveItem = (index) => {
+        const updatedCart = cart.filter((_, i) => i !== index);
+        setCart(updatedCart);
+        localStorage.setItem('cart', JSON.stringify(updatedCart));
+    };
+
+    const handleEditItem = (index) => {
+        setEditingIndex(index);
+        setNewSize(cart[index].size);
+        setProductCount(cart[index].count || 1);
+    };
+
+    const handleSaveEdit = (index) => {
+        const updatedCart = cart.map((item, i) =>
+            i === index
+                ? { ...item, size: newSize, count: productCount }
+                : item
+        );
+        setCart(updatedCart);
+        localStorage.setItem('cart', JSON.stringify(updatedCart));
+        setEditingIndex(null);
+    };
+
+    const handleSizeChange = (size) => {
+        setNewSize(size);
+    };
+
+    const handleProductCountChange = (count) => {
+        setProductCount(count);
+    };
+
+    const availableSizes = ["S", "M", "L", "XL"]; // Example sizes
+
+    if (cart.length === 0) return <div>Your cart is empty</div>;
+
+    return (
+        <div className="cart-container">
+            <h1 className="text-2xl font-bold mb-4">Your Cart</h1>
+            <ul>
+                {cart.map((item, index) => (
+                    <li key={index} className="mb-4 p-4 border rounded shadow">
+                        <div className="flex items-center justify-between">
+                            <img src={item.image} alt={item.name} className="w-20 h-20 object-cover" />
+                            <div className="flex flex-col flex-grow mx-4">
+                                <h2 className="font-bold">{item.name}</h2>
+                                <p>Price: &#8377; {item.price}</p>
+                                {editingIndex === index ? (
+                                    <div>
+                                        <div className="mt-2">
+                                            <span>Select Size: </span>
+                                            <select
+                                                value={newSize}
+                                                onChange={(e) => handleSizeChange(e.target.value)}
+                                                className="ml-2 p-1 border rounded"
+                                            >
+                                                {availableSizes.map((size, i) => (
+                                                    <option key={i} value={size}>
+                                                        {size}
+                                                    </option>
+                                                ))}
+                                            </select>
+                                        </div>
+                                        <div className="mt-2">
+                                            <span>Quantity: </span>
+                                            <input
+                                                type="number"
+                                                value={productCount}
+                                                onChange={(e) => handleProductCountChange(Number(e.target.value))}
+                                                min="1"
+                                                className="ml-2 p-1 border rounded w-16"
+                                            />
+                                        </div>
+                                        <button
+                                            onClick={() => handleSaveEdit(index)}
+                                            className="mt-4 p-2 bg-green-500 text-white rounded"
+                                        >
+                                            Save
+                                        </button>
+                                    </div>
+                                ) : (
+                                    <div>
+                                        <p>Size: {item.size}</p>
+                                        <p>Quantity: {item.count || 1}</p>
+                                        <button
+                                            onClick={() => handleEditItem(index)}
+                                            className="mt-2 p-2 bg-blue-500 text-white rounded"
+                                        >
+                                            Edit
+                                        </button>
+                                    </div>
+                                )}
+                            </div>
+                            <button
+                                onClick={() => handleRemoveItem(index)}
+                                className="p-2 bg-red-500 text-white rounded"
+                            >
+                                Remove
+                            </button>
+                        </div>
+                    </li>
+                ))}
+            </ul>
+            <button
+                onClick={() => navigate('/checkout')}
+                className="mt-4 p-2 bg-black text-white rounded"
+            >
+                Proceed to Checkout
+            </button>
+        </div>
+    );
+};
+
+export default Cart;
