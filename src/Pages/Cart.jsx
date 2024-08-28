@@ -17,7 +17,7 @@ const Cart = () => {
         const updatedCart = [...cart];
         updatedCart.splice(index, 1); 
         setCart(updatedCart);
-        localStorage.setItem('cart', JSON.stringify(updatedCart)); // Update the localStorage
+        localStorage.setItem('cart', JSON.stringify(updatedCart)); 
         calculateSubtotal(updatedCart); 
     };
 
@@ -113,7 +113,7 @@ const Cart = () => {
                                 </button>
                             </div>
                         ))}
-                        <div className="flex justify-end text-xl font-semibold mt-6">
+                        <div className="flex justify-end text-xl font-semibold mt-6 py-4">
                             Subtotal: &#8377; {subtotal}
                         </div>
                     </div>
