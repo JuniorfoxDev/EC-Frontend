@@ -12,7 +12,7 @@ const ProductCard = ({_id,images, name, price,subcategory}) => {
     setCurrentImage(images[0].url)
   }
     return (
-        <Link to={`/product/${_id}`} className='min-w-[250px] px-[10px] py-[12px]'>
+        <Link to={`/product/${_id}`} className=' px-[10px] py-[12px]'>
         {images && (
                 <img src={currentImage} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} alt={name}  className='w-[350px] h-[350px]  transition-all duration-300 ease-in-out'/>
             )}

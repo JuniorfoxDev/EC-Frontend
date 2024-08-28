@@ -7,6 +7,7 @@ import About from './Pages/About'
 import Subcategory from './Pages/Subcategory'
 import Promo from './Components/Promo'
 import Footer from './Components/Footer'
+import AllProduct from './Pages/AllProduct'
 export default function App({_id}) {
   return (
    <>
@@ -19,6 +20,7 @@ export default function App({_id}) {
         <Route path='/contact' exact element={<Contact/>}/>
         <Route path='/product/:id' exact element={<Product/>}/>
         <Route path='categories/:subcategory' exact element={<Subcategory/>}/>
+        <Route path='/all-product' exact element={<AllProduct/>} />
       </Routes>
       <Footer/>
     </BrowserRouter>
