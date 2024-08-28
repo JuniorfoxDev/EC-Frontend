@@ -43,8 +43,8 @@ const Product = () => {
         };
         cart.push(cartItem);
         localStorage.setItem('cart',JSON.stringify(cart));
-        console.log(cartItem);
-        navigate('/cart');
+        console.log(cart);
+        // navigate('/cart');
     }
     return (
         <div className="w-full md:py-20">
